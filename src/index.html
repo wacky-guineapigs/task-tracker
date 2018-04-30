@@ -22,7 +22,7 @@
 		<section id="todo" class="column">
 			<div class="section__header">
 				<h2>To Do</h2>
-				<span class="new__card plus" id="toggle__card"><img src="img/x.png"></span>
+				<span class="new__card plus" id="toggle__card"><img src="img/x.png" class="task__button"></span>
 			</div>
 			<div class="card__form hide">
 				<input type="text" id="form__title" placeholder="Task name">
@@ -31,9 +31,10 @@
 					<option value="volvo">Volvo</option>
 				  </select>
 				<input type="text" id="form__new__category" class="hide" placeholder="New category">
-				<span class="new__category plus" id="toggle__category"><img src="img/x.png"></span>
+				<input type="button" id="form__submit__category" class="hide" value="Add category">
+				<span class="new__category plus" id="toggle__category"><img src="img/x.png" class="cat__button"></span>
 				<input type="date" id="form__due" placeholder="Date">
-				<input type="button" id="form__submit" value="Create Task"></button>
+				<input type="button" id="form__submit" value="Create Task">
 			</div>
 		</section>
 		<section id="doing" class="column">
@@ -50,13 +51,13 @@
 
 	<div id="charts" class="content hide">
 		<section class="charts__section">
-
+			<h2>Charts</h2>
 		</section>
 	</div>
 	
 	<div id="archive" class="content hide">
 		<section class="archive__section">
-
+			<h2>Archive</h2>
 		</section>
 	</div>
 
