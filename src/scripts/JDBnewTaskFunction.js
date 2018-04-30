@@ -45,8 +45,7 @@ const manageDB = Object.create({}, {
                     value: due
                 }
             })
-            tasks.push(newTask)
-            localStorage.setItem("tasks", tasks)
+            manageDB.tasks.push(newTask)
         }
     }
 })
