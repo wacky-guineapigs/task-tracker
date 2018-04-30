@@ -11,9 +11,9 @@
 		<div class = "nav__bar">
 			<h1>Wacky Guinea Pigs | Task Tracker</h1>
 			<div class="views">
-				<button id="tasks__view">Tasks</button>
-				<button id="charts__view">Charts</button>
-				<button id="archive__view">Archive</button>
+				<input type="button" id="tasks__view" value="Tasks">
+				<input type="button" id="charts__view" value="Charts">
+				<input type="button" id="archive__view" value="Archive">
 			</div>
 		</div>
 	
@@ -30,14 +30,11 @@
 				<!-- <input type="radio" id="form__category" placeholder="Category"> -->
 				<select name="Category" id="form__category">
 					<option value="volvo">Volvo</option>
-					<option value="saab">Saab</option>
-					<option value="fiat">Fiat</option>
-					<option value="audi">Audi</option>
 				  </select>
 				<input type="text" id="form__new__category" class="hide" placeholder="New category">
 				<span class="new__category plus" id="toggle__category"><img src="img/x.png"></span>
 				<input type="date" id="form__due" placeholder="Date">
-				<button id="form__submit">Create Task</button>
+				<input type="button" id="form__submit" value="Create Task"></button>
 			</div>
 		</section>
 		<section id="doing" class="column">
@@ -63,6 +60,7 @@
 
 		</section>
 	</div>
-        <script src="scripts/bundle.js"></script>
+
+    <script src="scripts/bundle.js"></script>
 </body>
 </html>
