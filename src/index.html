@@ -3,11 +3,64 @@
 <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="styles/styles.css">
-        <title>Working Title</title>
+        <title>Task Tracker</title>
 </head>
 
 <body>
 
-        <script src="scripts/bundle.js"></script>
+		<div class = "nav__bar">
+			<h1>Wacky Guinea Pigs | Task Tracker</h1>
+			<div class="views">
+				<input type="button" id="tasks__view" value="Tasks">
+				<input type="button" id="charts__view" value="Charts">
+				<input type="button" id="archive__view" value="Archive">
+			</div>
+		</div>
+	
+	
+	<div id="tasks" class="content">
+		<section id="todo" class="column">
+			<div class="section__header">
+				<h2>To Do</h2>
+				<span class="new__card plus" id="toggle__card"><img src="img/x.png"></span>
+			</div>
+			<div class="card__form hide">
+				<input type="text" id="form__title" placeholder="Task name">
+				<input type="text" id="form__description" placeholder="Description">
+				<!-- <input type="radio" id="form__category" placeholder="Category"> -->
+				<select name="Category" id="form__category">
+					<option value="volvo">Volvo</option>
+				  </select>
+				<input type="text" id="form__new__category" class="hide" placeholder="New category">
+				<span class="new__category plus" id="toggle__category"><img src="img/x.png"></span>
+				<input type="date" id="form__due" placeholder="Date">
+				<input type="button" id="form__submit" value="Create Task"></button>
+			</div>
+		</section>
+		<section id="doing" class="column">
+			<div class="section__header">
+				<h2>Doing</h2>
+			</div>
+		</section>
+		<section id="done" class="column">
+			<div class="section__header">
+				<h2>Done</h2>
+			</div>
+		</section>
+	</div>
+
+	<div id="charts" class="content hide">
+		<section class="charts__section">
+
+		</section>
+	</div>
+	
+	<div id="archive" class="content hide">
+		<section class="archive__section">
+
+		</section>
+	</div>
+
+    <script src="scripts/bundle.js"></script>
 </body>
 </html>
