@@ -49,3 +49,5 @@ const manageDB = Object.create({}, {
         }
     }
 })
+
+module.exports = manageDB
