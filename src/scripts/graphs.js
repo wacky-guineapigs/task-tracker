@@ -64,7 +64,7 @@ const dataAnalysis = Object.create({}, {
         writable: false, 
         value: () => {
             return categoriesDB.categories.map(category => {
-            return manageDB.tasks.filter(task => task.Category === category).reduce((a, b) => {a + (parse(b.Completed) - parse(b.Created))}, 0)/manageDB.tasks.filter(task => task.Category === category)
+                return manageDB.tasks.filter(task => task.Category === category).reduce((a, b) => {a + (parse(b.Completed) - parse(b.Created))}, 0)/manageDB.tasks.filter(task => task.Category === category)
             })
         }
     }
