@@ -60,7 +60,15 @@ function addCategoryToDom (value) {
     }
 }
 
+const DOMBuilder = Object.create({},{
+	addCardToDom:
+	{
+		value: addCardToDom
+	},
+	addCategoryToDom:
+	{
+		value: addCategoryToDom
+	}
+})
 
-
-module.exports = addCardToDom
-module.exports = addCategoryToDom
+module.exports = DOMBuilder

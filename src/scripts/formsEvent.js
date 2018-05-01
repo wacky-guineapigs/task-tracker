@@ -1,5 +1,5 @@
 const newCategory = require("./categories")
-const appendCategory = require("./DOMBuilder")
+const DOMBuilder = require("./DOMBuilder")
 
 const openTaskAdd = () => {
 	let addBox = document.querySelector(".card__form")
@@ -26,11 +26,11 @@ const addCategory = () =>{
 	// add it to the category array
 	newCategory.categories.push(newCat)
 	// print it to the DOM at #form__category as option with value and text content set to the pulled value
-	appendCategory.addCategoryToDom(newCat)
+	DOMBuilder.addCategoryToDom(newCat)
 	//clear text content on input
 	catRef.value = ""
 	// call 
-	closeCatAdd
+	closeCatAdd()
 }
 
 const openCatAdd = () => {
