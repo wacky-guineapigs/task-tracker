@@ -54,7 +54,8 @@ const manageDB = Object.create({}, {
         const stringifiedDatabase = JSON.stringify(databaseObject)
         // set to local storage
         localStorage.setItem(localStorageKey, stringifiedDatabase)
-      },
+	 	}
+	},
       retrieveTasks: {
         value: (dbName) => {
           // Check to see if DB exists:
@@ -67,8 +68,7 @@ const manageDB = Object.create({}, {
           } 
           return databaseParse
         }
-      }
-    }
+    },
 })
 
 // manageDB.saveTasks(manageDB.tasks, "tasks")
