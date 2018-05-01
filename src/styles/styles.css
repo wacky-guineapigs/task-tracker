@@ -55,6 +55,22 @@ body{
 
 /* charts page CSS */
 
+.charts__section {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	align-content: center;
+	width: 95%;
+	margin: 0 2.5%;
+}
+.charts__item {
+	border: solid 3px black;
+	width: 40%;
+}
+
+#charts{
+	display: block;
+}
 /* archive page */
 
 /* hide class CSS */
