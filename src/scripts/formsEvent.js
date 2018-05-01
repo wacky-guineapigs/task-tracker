@@ -1,5 +1,7 @@
-const newCategory = require("./categories")
+const categoryDB = require("./categories")
 const DOMBuilder = require("./DOMBuilder")
+const manageDB = require("./manageDB")
+
 
 const openTaskAdd = () => {
 	let addBox = document.querySelector(".card__form")
@@ -24,7 +26,9 @@ const addCategory = () =>{
 	let catRef = document.querySelector("#form__new__category")
 	let newCat = catRef.value
 	// add it to the category array
-	newCategory.categories.push(newCat)
+	categoryDB.saveNewCategory(newCat)
+	// save updated categories to local storage
+	manageDB.saveTasks(categoryDB.categories, "categories")
 	// print it to the DOM at #form__category as option with value and text content set to the pulled value
 	DOMBuilder.addCategoryToDom(newCat)
 	//clear text content on input
