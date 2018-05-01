@@ -24,11 +24,6 @@ const manageDB = Object.create({}, {
                     writable: true, 
                     value: category
                 }, 
-                Archived:{
-                    enumerable: true, 
-                    writable: true, 
-                    value: false
-                },
                 Created: {
                     enumerable: true, 
                     writable: true, 
@@ -43,6 +38,11 @@ const manageDB = Object.create({}, {
                     enumerable: true, 
                     writable: true, 
                     value: due
+                },
+                currentStatus: {
+                    enumerable: true, 
+                    writable: true, 
+                    value: "todo"
                 }
             })
             manageDB.tasks.push(newTask)
