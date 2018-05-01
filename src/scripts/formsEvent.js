@@ -45,3 +45,12 @@ const openCatAdd = () => {
 
 
 const addCat = document.querySelector(".cat__button").addEventListener("click", openCatAdd)
+
+const formActor = Object.create({}, {
+	openTaskAdd: {
+		value: openTaskAdd
+	}
+})
+
+
+module.exports = formActor
