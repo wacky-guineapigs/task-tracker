@@ -1,6 +1,6 @@
 function addCardToDom (title, category, description, dueDate, position) {
     
-    const toDoSection = document.querySelector(position)
+    const toDoSection = document.querySelector(`#${position}`)
     const newCardDiv = document.createElement("div")
     const newHeaderDiv = document.createElement("div")
     const newTitleHeader = document.createElement("h4")
