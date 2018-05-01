@@ -19,22 +19,26 @@ const dataAnalysis = Object.create({}, {
     currentCategoryTotals: {
         enumerable: true, 
         writable: false, 
-        value: (tallyOrlabels) => {
-            const categories = {}
+        value: (tallyOrLabels) => {
+            const categoriesTally = {}
             categoriesDB.categories.forEach(category => {
                 categoriesTally[category] = 0
             })
             manageDB.tasks.forEach(task => {
                 categoriesTally[task.Category]++
             })
-            const catTallySortable = categoriesTally.entries()
+            const catTallySortable = Object.entries(categoriesTally)
             const tally = []
             const labels = []
             catTallySortable.forEach(category => {
                 tally.push(category[1])
                 labels.push(category[0])
-            return tallyOrlabels
-        })
+            })
+            if (tallyOrLabels === "tally") {
+                return tally
+            } else if (tallyOrLabels === "labels") {
+                return labels
+            }
         }
     },
     onTimeData: {
@@ -42,13 +46,13 @@ const dataAnalysis = Object.create({}, {
         writable: false, 
         value: () => {
             const onTimeTasks = manageDB.tasks.filter(task => {
-                const dueDate = parse(new Date(task.Due))
-                const completedDate = parse(task.Completed)
+                const dueDate = task.Due
+                const completedDate = task.Completed
                 return dueDate >= completedDate
             })
             const lateTasks = manageDB.tasks.filter(task => {
-                const dueDate = parse(new Date(task.Due))
-                const completedDate = parse(task.Completed)
+                const dueDate = task.Due
+                const completedDate = task.Completed
                 return dueDate <= completedDate
             })
             const onTime = onTimeTasks.length
@@ -64,7 +68,8 @@ const dataAnalysis = Object.create({}, {
         writable: false, 
         value: () => {
             return categoriesDB.categories.map(category => {
-                return manageDB.tasks.filter(task => task.Category === category).reduce((a, b) => {a + (parse(b.Completed) - parse(b.Created))}, 0)/manageDB.tasks.filter(task => task.Category === category)
+                const tasksinCategory = manageDB.tasks.filter(task => task.Category === category)
+                return tasksinCategory.reduce((a, b) => a + (b.Completed - b.Created), 0)/tasksinCategory.length
             })
         }
     }
