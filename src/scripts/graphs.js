@@ -11,7 +11,7 @@ currentColumns.push(manageDB.tasks.filter(task => task.currentStatus === "done")
 currentColumns.push(manageDB.tasks.filter(task => task.currentStatus === "archived").length)
 
 ///How many tasks in each category (include uncategorized)
-const categoriesTally = {}
+const categories = {}
 categoriesDB.categories.forEach(category => {
     categoriesTally[category] = 0
 })
@@ -48,3 +48,14 @@ onTimeChartData.push(behindSchedule)
 
 
 ///Average time it took to complete tasks in each category
+const categoryAverages = categoriesDB.categories.map(category => {
+     return manageDB.tasks.filter(task => task.Category === category).reduce((a, b) => {
+        a + (parse(b.Completed) - parse(b.Created))
+     }, 0)/manageDB.tasks.filter(task => task.Category === category)
+})
+
+///labels for fourth graph:
+categoriesDB.categories
+///data for fourth graph: 
+categoryAverages
+
