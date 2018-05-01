@@ -47,7 +47,30 @@ const manageDB = Object.create({}, {
             })
             manageDB.tasks.push(newTask)
         }
+    },
+    saveTasks: {
+      value: (databaseObject, localStorageKey) => {
+        // turn DB into JSON string
+        const stringifiedDatabase = JSON.stringify(databaseObject)
+        // set to local storage
+        localStorage.setItem(localStorageKey, stringifiedDatabase)
+      },
+      retrieveTasks: {
+        value: (dbName) => {
+          // Check to see if DB exists:
+          let databaseParse = []
+          if (localStorage.getItem(dbName)) {
+            // Get the string version of the database
+            const databaseString = localStorage.getItem(dbName)
+            // Use JSON.parse() to convert the string back into an object
+            databaseParse = JSON.parse(databaseString)
+          } 
+          return databaseParse
+        }
+      }
     }
 })
+
+manageDB.saveTasks(manageDB.tasks, "tasks")
 
 module.exports = manageDB
