@@ -46,8 +46,8 @@ const dataAnalysis = Object.create({}, {
         writable: false, 
         value: () => {
             const onTimeTasks = manageDB.tasks.filter(task => {
-                const dueDate = task.Due
-                const completedDate = task.Completed
+                const dueDate = Date.parse(new Date(task.Due))
+                const completedDate = Date.parse(task.Completed)
                 if (completedDate > 0) {
                 return dueDate >= completedDate
                 } else {
@@ -55,8 +55,8 @@ const dataAnalysis = Object.create({}, {
                 }
             })
             const lateTasks = manageDB.tasks.filter(task => {
-                const dueDate = task.Due
-                const completedDate = task.Completed
+                const dueDate = Date.parse(new Date(task.Due))
+                const completedDate = Date.parse(task.Completed)
                 if (completedDate > 0) {
                     return dueDate <= completedDate
                 } else {
@@ -77,7 +77,7 @@ const dataAnalysis = Object.create({}, {
         value: () => {
             return categoriesDB.categories.map(category => {
                 const tasksinCategory = manageDB.tasks.filter(task => task.Category === category)
-                return tasksinCategory.reduce((a, b) => a + (b.Completed - b.Created), 0)/tasksinCategory.length
+                return tasksinCategory.reduce((a, b) => a + (Date.parse(b.Completed) - Date.parse(b.Created)), 0)/tasksinCategory.length/86400000
             })
         }
     }
