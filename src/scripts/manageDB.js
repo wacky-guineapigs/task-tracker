@@ -27,7 +27,7 @@ const manageDB = Object.create({}, {
                 Created: {
                     enumerable: true, 
                     writable: true, 
-                    value: new Date()
+                    value: Date.parse(new Date())
                 }, 
                 Completed: {
                     enumerable: true, 
@@ -46,7 +46,6 @@ const manageDB = Object.create({}, {
                 }
             })
 			manageDB.tasks.push(newTask)
-			return newTask
         }
     },
     saveTasks: {
