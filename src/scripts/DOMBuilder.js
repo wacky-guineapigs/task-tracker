@@ -1,4 +1,4 @@
-function addCardToDom (title, category, description, dueDate, position) {
+function addCardToDom (title, category, description, dueDate, position, dateCreated) {
     
     const toDoSection = document.querySelector(`#${position}`)
     const newCardDiv = document.createElement("div")
@@ -10,7 +10,8 @@ function addCardToDom (title, category, description, dueDate, position) {
     const newOverduePara = document.createElement("p")
     const newArchiveBtn = document.createElement("input")
 
-    newCardDiv.classList = "card"
+	newCardDiv.classList = "card"
+	newCardDiv.id = ("" + dateCreated)
     newHeaderDiv.classList = "cardHeader"
     newOverduePara.classList = "overdueText hide"
     newArchiveBtn.classList = "archiveBtn hide"

@@ -18,8 +18,8 @@
     const taskCat = document.querySelector("#form__category").value
     const taskDue = new Date(document.querySelector("#form__due").value + "CDT")
 
-    taskMaker.saveNewTask(taskName, taskDesc, taskCat, taskDue)
-    DOMBuilder.addCardToDom(taskName, taskCat, taskDesc, taskDue, "todo")
+    let task = taskMaker.saveNewTask(taskName, taskDesc, taskCat, taskDue)
+    DOMBuilder.addCardToDom(task.Title, task.Category, task.Description, task.Due, "todo", task.Created)
     taskMaker.saveTasks(taskMaker.tasks, "tasks")
     formActor.openTaskAdd()
     clearForm()
