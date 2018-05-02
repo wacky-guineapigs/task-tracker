@@ -222,12 +222,16 @@ body{
 	margin: 10px auto;
 }
 
+#archived .section__header{
+	margin: auto;
+}
+
 #archived #archive{
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-evenly;
-	min-height: 880px;
-	max-height: 880px;
+	min-height: 800px;
+	max-height: 800px;
 	/* align-content: center; */
 	/* width: 100%; */
 	/* margin: 0 2.5%; */
