@@ -1,9 +1,9 @@
 const DragDropManager = Object.create(null, {
   init: {
     value: () => {
-      const columns = document.querySelectorAll(".column")
-      columns.forEach(column => {
-        column.ondragstart = eventData => {
+      const cards = document.querySelectorAll(".card")
+      cards.forEach(card => {
+        card.ondragstart = eventData => {
           // console.log(eventData)
           // eventData is an object containing information about the object being dragged, and is created upon start of drag
           // dataTransfer is a holding area for data about the event
