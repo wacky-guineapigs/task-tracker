@@ -1,3 +1,6 @@
+const graphs = require("./graphs.js")
+const displayCharts = graphs.displayCharts
+
 const openTaskView = () => {
 	let view = document.querySelector("#tasks")
 	let closeOne = document.querySelector("#charts")
@@ -27,6 +30,7 @@ const openChartsView = () => {
 	if(!closeTwo.classList.contains("hide")){
 		closeTwo.classList.toggle("hide")
 	}
+	displayCharts()
 }
 
 
