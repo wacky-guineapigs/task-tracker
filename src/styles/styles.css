@@ -81,6 +81,7 @@ body{
 	border: 4px solid black;
 	border-radius: 3px;
 	display: flex;
+	flex-flow: column;
 	/* align-items: center; */
 	justify-content: center;
 	flex-wrap: wrap;
@@ -189,4 +190,8 @@ body{
 
 .hide{
 	display: none !important;
+}
+
+#done .archiveBtn{
+	display: inherit !important;
 }
