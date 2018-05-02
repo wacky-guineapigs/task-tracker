@@ -16,6 +16,9 @@ function addCardToDom (title, category, description, dueDate, position, dateCrea
 	newCardDiv.id = ("" + dateCreated)
     newHeaderDiv.classList = "cardHeader"
     newOverduePara.classList = "overdueText hide"
+    if (dueDate < Date.parse(new Date())) {
+        newOverduePara.classList.toggle("hide")
+    }
     newArchiveBtn.classList = "archiveBtn hide"
 
 
