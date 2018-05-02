@@ -25,7 +25,46 @@ body{
 }
 
 
+/* card styles */
+
+.card{
+	width: 90%;
+	display: flex;
+	/* align-items: center; */
+	justify-content: center;
+	flex-wrap: wrap;
+	border-radius: 3px;
+	margin: 10px 0;
+	height: 150px;
+	text-align: center;
+}
+
+.cardHeader{
+	margin-top:10px;
+	display: flex;
+	justify-content: space-evenly;
+	width:90%;
+	border-bottom: 1px solid black;
+}
+
+.cardHeader h4{
+	display: inline;
+}
+
+.cardHeader h5{
+	display: inline;
+}
+
+.card p{
+	width:70%;
+	margin: 10px;
+}
+
 /* content section CSS */
+
+.wrapper{
+	height: calc(100vh - 50px);
+}
 
 .content{
 	display: flex;
@@ -37,8 +76,28 @@ body{
 
 .column{
 	width: 30%;
+	min-height:900px;
 	margin: 0 2.5%;
 	border: 4px solid black;
+	border-radius: 3px;
+	display: flex;
+	/* align-items: center; */
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.section__header{
+	width:90%;
+	height:40px;
+	text-align: center;
+	padding-bottom: 10px;
+	margin-top:20px;
+	margin-bottom: 10px;
+	border-bottom: 2px solid darkslategray;
+}
+
+.section__header h2{
+	display: inline;
 }
 
 .plus img{
@@ -51,6 +110,59 @@ body{
 
 .open{
 	transform: rotate(-45deg);
+}
+
+.card__form{
+	width: 90%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	background-color:lightgray;
+	border-radius: 3px;
+}
+
+.card__form input{
+	width:65%;
+	margin:10px;
+}
+
+.form__line{
+	width: 70%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.form__line input{
+	width: 40%;
+	margin-left: 2.5%;
+	margin-right: 2.5%;
+}
+.form__line select{
+	margin-right:5%;
+}
+
+#form__category{
+	height:25px;
+	margin-left: 2.5%;
+}
+
+#form__due{
+	margin-top:0;
+	margin-left:7.5%;
+	width: 50%;
+}
+
+#todo .card{
+	background-color: #8a55aa;
+}
+
+#doing .card{
+	background-color: #5b7baf;
+}
+
+#done .card{
+	background-color: #484649;
 }
 
 /* charts page CSS */

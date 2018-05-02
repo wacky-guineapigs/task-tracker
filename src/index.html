@@ -17,37 +17,41 @@
 			</div>
 		</div>
 	
-	
-	<div id="tasks" class="content">
-		<section id="todo" class="column">
-			<div class="section__header">
-				<h2>To Do</h2>
-				<span class="new__card plus" id="toggle__card"><img src="img/x.png" class="task__button"></span>
-			</div>
-			<div class="card__form hide">
-				<input type="text" id="form__title" placeholder="Task name">
-				<input type="text" id="form__description" placeholder="Description">
-				<select name="Category" id="form__category">
-					<option value="volvo">Volvo</option>
-				  </select>
-				<input type="text" id="form__new__category" class="hide" placeholder="New category">
-				<input type="button" id="form__submit__category" class="hide" value="Add category">
-				<span class="new__category plus" id="toggle__category"><img src="img/x.png" class="cat__button"></span>
-				<input type="date" id="form__due" placeholder="Date">
-				<input type="button" id="form__submit" value="Create Task">
-			</div>
-		</section>
-		<section id="doing" class="column">
-			<div class="section__header">
-				<h2>Doing</h2>
-			</div>
-		</section>
-		<section id="done" class="column">
-			<div class="section__header">
-				<h2>Done</h2>
-			</div>
-		</section>
-	</div>
+	<div class="wrapper">
+		<div id="tasks" class="content">
+			<section id="todo" class="column">
+				<div class="section__header">
+					<h2>To Do</h2>
+					<span class="new__card plus" id="toggle__card"><img src="img/x.png" class="task__button"></span>
+				</div>
+				<div class="card__form hide">
+					<input type="text" id="form__title" placeholder="Task name">
+					<input type="text" id="form__description" placeholder="Description">
+					<div class="form__line">
+						<select name="Category" id="form__category">
+							<option value="none">None</option>
+						</select>
+						<span class="new__category plus" id="toggle__category"><img src="img/x.png" class="cat__button"></span>
+						<input type="date" id="form__due" placeholder="Date">
+					</div>
+					<div class="form__line">
+						<input type="text" id="form__new__category" class="hide" placeholder="New category">
+						<input type="button" id="form__submit__category" class="hide" value="Add category">
+					</div>
+					<input type="button" id="form__submit" value="Create Task">
+				</div>
+			</section>
+			<section id="doing" class="column">
+				<div class="section__header">
+					<h2>Doing</h2>
+				</div>
+			</section>
+			<section id="done" class="column">
+				<div class="section__header">
+					<h2>Done</h2>
+				</div>
+			</section>
+		</div>
 
 	<div id="charts" class="content hide">
 		<h2>Charts</h2>
