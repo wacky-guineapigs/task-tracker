@@ -36,6 +36,9 @@ function addCardToDom (title, category, description, dueDate, position, dateCrea
     newCardDiv.appendChild(newDueDatePara)
     newCardDiv.appendChild(newOverduePara)
     newCardDiv.appendChild(newArchiveBtn)
+    newCardDiv.ondragstart = eventData => {
+      eventData.dataTransfer.setData("sourceId", eventData.target.getAttribute("id"))
+    }
     toDoSection.appendChild(newCardDiv)
 }
 

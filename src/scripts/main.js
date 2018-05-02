@@ -13,3 +13,5 @@ taskData = manageDB.retrieveTasks("tasks")
 taskData.forEach(element => {
     DOMBuilder.addCardToDom(element.Title, element.Category, element.Description, element.Due, element.currentStatus, element.Created)
 });
+
+DragDropManager.init()
