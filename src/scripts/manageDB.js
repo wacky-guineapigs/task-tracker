@@ -45,7 +45,8 @@ const manageDB = Object.create({}, {
                     value: "todo"
                 }
             })
-            manageDB.tasks.push(newTask)
+			manageDB.tasks.push(newTask)
+			return newTask
         }
     },
     saveTasks: {

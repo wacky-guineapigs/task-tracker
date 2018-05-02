@@ -11,5 +11,5 @@ manageDB.tasks = manageDB.retrieveTasks("tasks")
 
 taskData = manageDB.retrieveTasks("tasks")
 taskData.forEach(element => {
-    DOMBuilder.addCardToDom(element.Title, element.Category, element.Description, element.Due, element.currentStatus)
+    DOMBuilder.addCardToDom(element.Title, element.Category, element.Description, element.Due, element.currentStatus, element.Created)
 });
