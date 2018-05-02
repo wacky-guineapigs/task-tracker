@@ -31,3 +31,7 @@ const DragDropManager = Object.create(null, {
 DragDropManager.init()
 
 module.exports = DragDropManager
+
+// Second Pass
+// Create object
+// Create function to initialize both event listeners
