@@ -24,6 +24,7 @@ const dataAnalysis = Object.create({}, {
             categoriesDB.categories.forEach(category => {
                 categoriesTally[category] = 0
             })
+            categoriesTally.none = 0
             manageDB.tasks.forEach(task => {
                 categoriesTally[task.Category]++
             })
@@ -75,7 +76,9 @@ const dataAnalysis = Object.create({}, {
         enumerable: true, 
         writable: false, 
         value: () => {
-            return categoriesDB.categories.map(category => {
+            const categoryAveragesArray = categoriesDB.categories
+            categoryAveragesArray.push("none")
+            return categoryAveragesArray.map(category => {
                 const tasksinCategory = manageDB.tasks.filter(task => task.Category === category)
                 return tasksinCategory.reduce((a, b) => a + (b.Completed - b.Created), 0)/tasksinCategory.length/86400000 //converts milliseconds to days 1000*60*60*24
             })
