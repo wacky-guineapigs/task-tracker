@@ -4,7 +4,7 @@ const displayCharts = graphs.displayCharts
 const openTaskView = () => {
 	let view = document.querySelector("#tasks")
 	let closeOne = document.querySelector("#charts")
-	let closeTwo = document.querySelector("#archive")
+	let closeTwo = document.querySelector("#archived")
 	if(view.classList.contains("hide")){
 		view.classList.toggle("hide")
 	}
@@ -20,7 +20,7 @@ const openTaskView = () => {
 const openChartsView = () => {
 	let closeOne = document.querySelector("#tasks")
 	let view = document.querySelector("#charts")
-	let closeTwo = document.querySelector("#archive")
+	let closeTwo = document.querySelector("#archived")
 	if(view.classList.contains("hide")){
 		view.classList.toggle("hide")
 	}
@@ -37,7 +37,7 @@ const openChartsView = () => {
 const openArchiveView = () => {
 	let closeTwo = document.querySelector("#tasks")
 	let closeOne = document.querySelector("#charts")
-	let view = document.querySelector("#archive")
+	let view = document.querySelector("#archived")
 	if(view.classList.contains("hide")){
 		view.classList.toggle("hide")
 	}
