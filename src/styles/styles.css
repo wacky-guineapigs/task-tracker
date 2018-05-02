@@ -70,7 +70,7 @@ body{
 	display: flex;
 	width: 100%;
 	justify-content: center;
-	max-height: 925px;
+	max-height: 900px;
 }
 
 /* tasks page CSS */
@@ -179,6 +179,7 @@ body{
 	align-content: center;
 	width: 95%;
 	margin: 0 2.5%;
+	padding-bottom: 20px;
 }
 .charts__item {
 	border: solid 3px black;
@@ -186,9 +187,44 @@ body{
 }
 
 #charts{
-	display: block;
+	width: 95%;
+	background-color: #c6c6c6;
+	border: 2px solid black;
+	border-radius: 3px;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	margin: auto;
 }
+
+#charts h2{
+	width: 90%;
+	margin: 15px auto;
+	padding-bottom: 15px;
+	border-bottom: 1px solid black;
+}
+
 /* archive page */
+
+#archive{
+	width: 95%;
+	min-height:900px;
+	margin: 0 2.5%;
+	background-color: #c6c6c6;
+	border: 2px solid black;
+	border-radius: 3px;
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	/* justify-content: center; */
+	/* flex-wrap: wrap; */
+	overflow-y: scroll;
+}
+
+#archive .card{
+	background-color: #539351;
+}
 
 /* hide class CSS */
 
