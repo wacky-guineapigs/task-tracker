@@ -13,15 +13,15 @@ const DragDropManager = Object.create(null, {
 
       const targets = document.querySelectorAll(".column")
       targets.forEach(target => {
-        console.log(target)
         // variable eventData is an object containing info about the ondragover event
         target.ondragover = eventData => eventData.preventDefault()
         target.ondrop = eventData => {
-          console.log(eventData)
           eventData.preventDefault()
           // Pull from holding area info about the dragged item's class
           const data = eventData.dataTransfer.getData("sourceclasslist")
+          if (target.getAttribute("id") !== "todo" && target.className !== "card") {
           eventData.target.appendChild(document.querySelector(`.${data}`))
+          }
         }
       })
     }
