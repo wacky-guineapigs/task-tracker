@@ -38,20 +38,20 @@ const DragDropManager = Object.create(null, {
       doingColumn.ondrop = eventData => {
         eventData.preventDefault()
         const data = eventData.dataTransfer.getData("sourceId")
-        const draggedTask = manageDB.tasks.find(task => task.Created === data)
+        const draggedTask = manageDB.tasks.find(task => task.Created === parseInt(data))
         draggedTask.currentStatus = "doing"
-        doingColumn.appendChild(document.querySelector(`#${data}`))
-      }
+        doingColumn.appendChild(document.getElementById(`${data}`))
+      };
         
       const doneColumn = document.querySelector("#done")
       doneColumn.ondragover = eventData => eventData.preventDefault()
       doneColumn.ondrop = eventData => {
         eventData.preventDefault()
         const data = eventData.dataTransfer.getData("sourceId")
-        const draggedTask = manageDB.tasks.find(task => task.Created === data)
+        const draggedTask = manageDB.tasks.find(task => task.Created === parseInt(data))
         draggedTask.currentStatus = "done"
         draggedTask.Completed = Date.parse(new Date())
-        doneColumn.appendChild(document.querySelector(`#${data}`))
+        doneColumn.appendChild(document.getElementById(`${data}`))
       }
     }
   }
