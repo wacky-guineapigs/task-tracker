@@ -25,7 +25,7 @@ function addCardToDom (title, category, description, dueDate, position, dateCrea
     newTitleHeader.textContent = title
     newCategoryHeader.textContent = category
     newDescPara.textContent = description
-    newDueDatePara.textContent = dueDate
+    newDueDatePara.textContent = new Date(dueDate).toDateString()
     newOverduePara.textContent = "This task is overdue"
     
 
