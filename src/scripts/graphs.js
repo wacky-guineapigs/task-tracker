@@ -12,7 +12,7 @@ const dataAnalysis = Object.create({}, {
             currentColumns.push(manageDB.tasks.filter(task => task.currentStatus === "todo").length)
             currentColumns.push(manageDB.tasks.filter(task => task.currentStatus === "doing").length)
             currentColumns.push(manageDB.tasks.filter(task => task.currentStatus === "done").length)
-            currentColumns.push(manageDB.tasks.filter(task => task.currentStatus === "archived").length)
+            currentColumns.push(manageDB.tasks.filter(task => task.currentStatus === "archive").length)
             return currentColumns
         }
     },
@@ -46,8 +46,8 @@ const dataAnalysis = Object.create({}, {
         writable: false, 
         value: () => {
             const onTimeTasks = manageDB.tasks.filter(task => {
-                const dueDate = Date.parse(new Date(task.Due))
-                const completedDate = Date.parse(task.Completed)
+                const dueDate = task.Due
+                const completedDate = task.Completed
                 if (completedDate > 0) {
                 return dueDate >= completedDate
                 } else {
@@ -55,8 +55,8 @@ const dataAnalysis = Object.create({}, {
                 }
             })
             const lateTasks = manageDB.tasks.filter(task => {
-                const dueDate = Date.parse(new Date(task.Due))
-                const completedDate = Date.parse(task.Completed)
+                const dueDate = task.Due
+                const completedDate = task.Completed
                 if (completedDate > 0) {
                     return dueDate <= completedDate
                 } else {
@@ -77,7 +77,7 @@ const dataAnalysis = Object.create({}, {
         value: () => {
             return categoriesDB.categories.map(category => {
                 const tasksinCategory = manageDB.tasks.filter(task => task.Category === category)
-                return tasksinCategory.reduce((a, b) => a + (Date.parse(b.Completed) - Date.parse(b.Created)), 0)/tasksinCategory.length/86400000
+                return tasksinCategory.reduce((a, b) => a + (b.Completed - b.Created), 0)/tasksinCategory.length/86400000 //converts milliseconds to days 1000*60*60*24
             })
         }
     }
