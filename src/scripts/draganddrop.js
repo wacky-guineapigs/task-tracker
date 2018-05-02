@@ -32,7 +32,11 @@ const DragDropManager = Object.create(null, {
   init: {
     value: () => {
       const cards = document.querySelectorAll(".card")
-      
+      cards.forEach(card => {
+        card.ondragstart = eventData => {
+          eventData.dataTransfer.setData("sourceId", event.target)
+        }
+      })
     }
   }
 })
