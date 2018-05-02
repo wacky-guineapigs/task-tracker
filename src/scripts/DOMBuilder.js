@@ -1,3 +1,5 @@
+const manageDB = require("./manageDB")
+
 function addCardToDom (title, category, description, dueDate, position, dateCreated) {
     
     const toDoSection = document.querySelector(`#${position}`)
@@ -19,6 +21,13 @@ function addCardToDom (title, category, description, dueDate, position, dateCrea
 
     newArchiveBtn.type = "button"
     newArchiveBtn.value = "Archive"
+    newArchiveBtn.addEventListener("click", (e) => {
+        const archivedTask = manageDB.tasks.find(task => task.Created === parseInt(e.target.parentNode.id))
+        archivedTask.currentStatus = "archive"
+        e.target.parentNode.remove()
+        manageDB.saveTasks(manageDB.tasks, "tasks")
+        addCardToDom(archivedTask.Title, archivedTask.Category, archivedTask.Description, archivedTask.Due, archivedTask.currentStatus, archivedTask.Created)
+    })
     newCardDiv.draggable = "true"
 
 
