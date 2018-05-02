@@ -83,6 +83,7 @@ const dataAnalysis = Object.create({}, {
     }
 })
 
+///charts with data output to index.html
 var myChart = new Chart(document.getElementById("currentColumns"), {
     type: "bar",
     data: {
