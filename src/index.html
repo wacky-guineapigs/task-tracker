@@ -17,6 +17,22 @@
 			</div>
 		</div>
 	
+		<div id="edit" class="hide">
+			<section class="edit">
+				<div class="card__form">
+					<div class="form__line"><h3>Edit Task</h3></div>
+					<input type="text" id="editform__title" placeholder="Task name">
+					<input type="text" id="editform__description" placeholder="Description">
+					<div class="form__line">
+						<select name="Category" id="editform__category" class="form__category__print__two">
+							<option value="none">None</option>
+						</select>
+						<input type="date" id="editform__due" placeholder="Date">
+					</div>
+					<input type="button" id="editform__submit" value="Update Task">
+				</div>
+			</section>
+		</div>
 	<div class="wrapper">
 		<div id="tasks" class="content">
 			<section id="todo" class="column">
@@ -74,21 +90,6 @@
 			</div>
 		</section>
 	</div>
-  
-  <section id="edit" class="edit hide">
-      <div class="card__form">
-					<input type="text" id="editform__title" placeholder="Task name">
-					<input type="text" id="editform__description" placeholder="Description">
-					<div class="form__line">
-						<select name="Category" id="editform__category" class="form__category__print__two">
-							<option value="none">None</option>
-						</select>
-						<input type="date" id="editform__due" placeholder="Date">
-					</div>
-					<input type="button" id="editform__submit" value="Update Task">
-				</div>
-  </section>
-
 	<div id="archived" class="content hide">
 			<div class="section__header">
 				<h2>Archive</h2>
