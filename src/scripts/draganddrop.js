@@ -3,6 +3,13 @@ const manageDB = require("./manageDB")
 const DragDropManager = Object.create(null, {
   init: {
     value: () => {
+      const toDoColumn = document.querySelector("#todo")
+      toDoColumn.ondragover = event => event.preventDefault()
+      toDoColumn.ondrop = event => {
+        event.preventDefault()
+        alert("You can't move things here! uh uh.")
+      }
+
       const doingColumn = document.querySelector("#doing")
       doingColumn.ondragover = eventData => eventData.preventDefault()
       doingColumn.ondrop = eventData => {
