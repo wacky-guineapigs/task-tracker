@@ -1,5 +1,7 @@
 const manageDB = require("./manageDB")
 
+let taskID
+
 function addCardToDom (title, category, description, dueDate, position, dateCreated) {
     
     const toDoSection = document.querySelector(`#${position}`)
@@ -41,8 +43,8 @@ function addCardToDom (title, category, description, dueDate, position, dateCrea
 		const editTask = manageDB.tasks.find(task => task.Created === parseInt(e.target.parentNode.id))
 
 		//assign tasks ID to variable to for editHandling to import
-		const taskID = e.target.parentNode.id
-		module.exports = taskID
+        DOMBuilder.taskID = e.target.parentNode.id
+        DOMBuilder.cardReference = e.target.parentNode
 		//get reference to edit form
 		const editRef = document.querySelector("#edit")
 		
@@ -138,7 +140,16 @@ const DOMBuilder = Object.create({},{
 	addCategoryToDom:
 	{
 		value: addCategoryToDom
-	}
+    },
+    taskID: 
+    {
+        writable: true,
+        value: taskID
+    },
+    cardReference: {
+        writable: true, 
+        value: ""
+    }
 })
 
 

@@ -1,22 +1,18 @@
 const manageDB = require("./manageDB")
-const taskToEdit = require("./DOMBuilder").taskToEdit
+const DOMBuilder = require("./DOMBuilder")
 
 
-//handle the submit by editing the current task in the database and save the database
-
-
-
-// newArchiveBtn.addEventListener("click", (e) => {
-// 	const archivedTask = manageDB.tasks.find(task => task.Created === parseInt(e.target.parentNode.id))
-// 	archivedTask.currentStatus = "archive"
-// 	e.target.parentNode.remove()
-// 	manageDB.saveTasks(manageDB.tasks, "tasks")
-// 	addCardToDom(archivedTask.Title, archivedTask.Category, archivedTask.Description, archivedTask.Due, archivedTask.currentStatus, archivedTask.Created)
-// })
-
-
-function submitHandling(e){
-
-}
 
 //add event Listener to submit button
+const updateBtn = document.querySelector("#editform__submit")
+updateBtn.addEventListener("click", event => {
+    const tasktoEdit = manageDB.tasks.find(task => task.Created === parseInt(DOMBuilder.taskID))
+    tasktoEdit.Title = document.querySelector("#editform__title").value
+    tasktoEdit.Description =document.querySelector("#editform__description").value
+    tasktoEdit.Category = document.querySelector("#editform__category").value
+    tasktoEdit.Due = Date.parse(new Date(document.querySelector("#editform__due").value))
+    DOMBuilder.cardReference.remove()
+    DOMBuilder.addCardToDom(tasktoEdit.Title, tasktoEdit.Category, tasktoEdit.Description, tasktoEdit.Due, tasktoEdit.currentStatus, tasktoEdit.Created)
+    manageDB.saveTasks(manageDB.tasks, "tasks")
+    document.querySelector("#edit").classList.toggle("hide")
+})
