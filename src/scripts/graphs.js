@@ -79,7 +79,7 @@ const dataAnalysis = Object.create({}, {
             const categoryAveragesArray = categoriesDB.categories
             categoryAveragesArray.push("none")
             return categoryAveragesArray.map(category => {
-                const tasksinCategory = manageDB.tasks.filter(task => task.Category === category)
+                const tasksinCategory = manageDB.tasks.filter(task => task.Category === category).filter(task => task.Completed !== "")
                 return tasksinCategory.reduce((a, b) => a + (b.Completed - b.Created), 0)/tasksinCategory.length/86400000 //converts milliseconds to days 1000*60*60*24
             })
         }
