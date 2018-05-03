@@ -21,7 +21,7 @@ function addCardToDom (title, category, description, dueDate, position, dateCrea
         newOverduePara.classList.toggle("hide")
     }
     newArchiveBtn.classList = "archiveBtn hide"
-    newArchiveBtn.classList = "editBtn"
+    newEditBtn.classList = "editBtn"
 
 
     newArchiveBtn.type = "button"
