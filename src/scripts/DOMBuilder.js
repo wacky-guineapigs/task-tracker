@@ -47,8 +47,25 @@ function addCardToDom (title, category, description, dueDate, position, dateCrea
 		const editRef = document.querySelector("#edit")
 		
 		//populate edit form
+		document.querySelector("#editform__title").value = editTask.Title
+		document.querySelector("#editform__description").value = editTask.Description
+		document.querySelector("#editform__category").setAttribute("selected", editTask.Category)
+
+		//format date to populate field with
+		let dueFormat = new Date(editTask.Due),
+        month = "" + (dueFormat.getMonth() + 1),
+        day = "" + dueFormat.getDate(),
+        year = dueFormat.getFullYear()
+
+		if (month.length < 2) month = "0" + month
+		if (day.length < 2) day = "0" + day
+
+		dueFormat = [year, month, day].join("-")
+
+		document.querySelector("#editform__due").value = dueFormat
 
 		//unhide edit form
+		editRef.classList.toggle("hide")
 
 	})
 
@@ -75,7 +92,7 @@ function addCardToDom (title, category, description, dueDate, position, dateCrea
 
 
 function addCategoryToDom (value) {
-    const categorySelector = document.querySelector("#form__category")
+    const categorySelector = document.querySelector(".form__category__print")
     if (Array.isArray(value)) {
         const optionFrag = document.createDocumentFragment()
         value.forEach(element => {
@@ -90,6 +107,24 @@ function addCategoryToDom (value) {
         newCategoryOption.value = value
         newCategoryOption.textContent = value
         categorySelector.appendChild(newCategoryOption)
+    } else {
+        alert("Must be a String")
+	}
+	const categorySelectorTwo = document.querySelector(".form__category__print__two")
+    if (Array.isArray(value)) {
+        const optionFrag = document.createDocumentFragment()
+        value.forEach(element => {
+            const newCategoryOption = document.createElement("option")
+            newCategoryOption.value = element
+            newCategoryOption.textContent = element
+            optionFrag.appendChild(newCategoryOption)
+        })
+        categorySelectorTwo.appendChild(optionFrag)
+    } else if (typeof value === "string") {
+        const newCategoryOption = document.createElement("option")
+        newCategoryOption.value = value
+        newCategoryOption.textContent = value
+        categorySelectorTwo.appendChild(newCategoryOption)
     } else {
         alert("Must be a String")
     }

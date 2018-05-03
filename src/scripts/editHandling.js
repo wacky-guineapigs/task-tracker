@@ -6,13 +6,13 @@ const taskToEdit = require("./DOMBuilder").taskToEdit
 
 
 
-newArchiveBtn.addEventListener("click", (e) => {
-	const archivedTask = manageDB.tasks.find(task => task.Created === parseInt(e.target.parentNode.id))
-	archivedTask.currentStatus = "archive"
-	e.target.parentNode.remove()
-	manageDB.saveTasks(manageDB.tasks, "tasks")
-	addCardToDom(archivedTask.Title, archivedTask.Category, archivedTask.Description, archivedTask.Due, archivedTask.currentStatus, archivedTask.Created)
-})
+// newArchiveBtn.addEventListener("click", (e) => {
+// 	const archivedTask = manageDB.tasks.find(task => task.Created === parseInt(e.target.parentNode.id))
+// 	archivedTask.currentStatus = "archive"
+// 	e.target.parentNode.remove()
+// 	manageDB.saveTasks(manageDB.tasks, "tasks")
+// 	addCardToDom(archivedTask.Title, archivedTask.Category, archivedTask.Description, archivedTask.Due, archivedTask.currentStatus, archivedTask.Created)
+// })
 
 
 function submitHandling(e){
