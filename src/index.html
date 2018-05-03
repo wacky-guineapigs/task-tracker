@@ -74,7 +74,26 @@
 			</div>
 		</section>
 	</div>
-	
+  
+  <section id="edit" class="edit">
+      <div class="card__form">
+					<input type="text" id="editform__title" placeholder="Task name">
+					<input type="text" id="editform__description" placeholder="Description">
+					<div class="form__line">
+						<select name="Category" id="editform__category">
+							<option value="none">None</option>
+						</select>
+						<span class="new__category plus" id="edittoggle__category"><img src="img/x.png" class="cat__button"></span>
+						<input type="date" id="editform__due" placeholder="Date">
+					</div>
+					<div class="editform__line">
+						<input type="text" id="editform__new__category" class="hide" placeholder="New category">
+						<input type="button" id="editform__submit__category" class="hide" value="Add category">
+					</div>
+					<input type="button" id="editform__submit" value="Update Task">
+				</div>
+  </section>
+
 	<div id="archived" class="content hide">
 			<div class="section__header">
 				<h2>Archive</h2>
