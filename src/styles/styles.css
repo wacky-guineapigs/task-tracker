@@ -255,3 +255,20 @@ body{
 #done .archiveBtn{
 	display: inherit !important;
 }
+
+/* edit button and fields */
+#todo editBtn {
+  display: block;
+}
+
+#doing editBtn {
+  display: block;
+}
+
+#done editBtn {
+  display: none;
+}
+
+#archive editBtn {
+  display: none;
+}
