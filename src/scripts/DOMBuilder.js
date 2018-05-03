@@ -36,7 +36,21 @@ function addCardToDom (title, category, description, dueDate, position, dateCrea
         addCardToDom(archivedTask.Title, archivedTask.Category, archivedTask.Description, archivedTask.Due, archivedTask.currentStatus, archivedTask.Created)
     })
     newCardDiv.draggable = "true"
+	newEditBtn.addEventListener("click", (e) => {
+		//get task to edit
+		const editTask = manageDB.tasks.find(task => task.Created === parseInt(e.target.parentNode.id))
 
+		//assign tasks ID to variable to for editHandling to import
+		const taskID = e.target.parentNode.id
+		module.exports = taskID
+		//get reference to edit form
+		const editRef = document.querySelector("#edit")
+		
+		//populate edit form
+
+		//unhide edit form
+
+	})
 
     newTitleHeader.textContent = title
     newCategoryHeader.textContent = category
@@ -91,5 +105,6 @@ const DOMBuilder = Object.create({},{
 		value: addCategoryToDom
 	}
 })
+
 
 module.exports = DOMBuilder
