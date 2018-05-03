@@ -11,6 +11,7 @@ function addCardToDom (title, category, description, dueDate, position, dateCrea
     const newDueDatePara = document.createElement("p")
     const newOverduePara = document.createElement("p")
     const newArchiveBtn = document.createElement("input")
+    const newEditBtn = document.createElement("input")
 
 	newCardDiv.classList = "card"
 	newCardDiv.id = ("" + dateCreated)
@@ -20,10 +21,13 @@ function addCardToDom (title, category, description, dueDate, position, dateCrea
         newOverduePara.classList.toggle("hide")
     }
     newArchiveBtn.classList = "archiveBtn hide"
+    newArchiveBtn.classList = "editBtn"
 
 
     newArchiveBtn.type = "button"
     newArchiveBtn.value = "Archive"
+    newEditBtn.type = "button"
+    newEditBtn.value = "Edit"
     newArchiveBtn.addEventListener("click", (e) => {
         const archivedTask = manageDB.tasks.find(task => task.Created === parseInt(e.target.parentNode.id))
         archivedTask.currentStatus = "archive"
@@ -48,6 +52,7 @@ function addCardToDom (title, category, description, dueDate, position, dateCrea
     newCardDiv.appendChild(newDueDatePara)
     newCardDiv.appendChild(newOverduePara)
     newCardDiv.appendChild(newArchiveBtn)
+    newCardDiv.appendChild(newEditBtn)
     newCardDiv.ondragstart = eventData => {
       eventData.dataTransfer.setData("sourceId", eventData.target.getAttribute("id"))
     }
