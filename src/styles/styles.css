@@ -255,3 +255,35 @@ body{
 #done .archiveBtn{
 	display: inherit !important;
 }
+
+/* edit button and form */
+#todo .editBtn {
+  display: block;
+}
+
+#doing .editBtn {
+  display: block;
+}
+
+#done .editBtn {
+  display: none;
+}
+
+#archive .editBtn {
+  display: none;
+}
+
+#edit {
+  z-index: 0;
+  width: 30%;
+	background-color: lightgray;
+	border: 2px solid black;
+	border-radius: 3px;
+	min-height: 400px;
+	max-height: 400px;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: initial;
+	margin: 10px auto;
+}
